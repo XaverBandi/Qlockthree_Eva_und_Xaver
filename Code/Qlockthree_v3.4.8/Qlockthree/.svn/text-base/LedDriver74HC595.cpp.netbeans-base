@@ -1,0 +1,148 @@
+/**
+ * LedDriver74HC595.cpp
+ * Implementierung auf der Basis 74HC595 und UDN2981A.
+ *
+ * @mc       Arduino/RBBB
+ * @autor    Christian Aschoff / caschoff _AT_ mac _DOT_ com
+ * @version  1.0
+ * @created  18.1.2013
+ *
+ * Versionshistorie:
+ * V 1.0:  - Erstellt.
+ */
+#include "LedDriver74HC595.h"
+
+// #define DEBUG
+#include "Debug.h"
+
+#include "Configuration.h"
+
+// Hilfsvariable, um das Display auf den Kopf zu stellen
+#ifdef UPSIDE_DOWN
+  #define DISPLAY_SHIFT  9-
+#else
+  #define DISPLAY_SHIFT  0+
+#endif
+
+/**
+ * Initialisierung.
+ * 
+ * @param data Pin, an dem die Data-Line haengt.
+ * @param clock Pin, an dem die Clock-Line haengt.
+ * @param latch Pin, an dem die Latch-Line haengt.
+ * @param outputEnable Pin, an dem OutputEnable haengt.
+ * @param linesToWrite Wieviel Zeilen muessen aus dem Bildspeicher uebernommen werden?
+ */
+LedDriver74HC595::LedDriver74HC595(byte data, byte clock, byte latch, byte outputEnable, byte linesToWrite) {
+  _shiftRegister = new ShiftRegister(data, clock, latch);
+  _outputEnablePin = outputEnable;
+  pinMode(_outputEnablePin, OUTPUT);
+  _linesToWrite = linesToWrite;
+}
+
+/**
+ * init() wird im Hauptprogramm in init() aufgerufen.
+ * Hier sollten die LED-Treiber in eine definierten
+ * Ausgangszustand gebracht werden.
+ */
+void LedDriver74HC595::init() {
+}
+
+/**
+ * Den Bildschirm-Puffer auf die LED-Matrix schreiben.
+ * 
+ * @param onChange: TRUE, wenn es Aenderungen in dem Bildschirm-Puffer gab,
+ *                  FALSE, wenn es ein Refresh-Aufruf war.
+ */
+void LedDriver74HC595::writeScreenBufferToMatrix(word matrix[16], boolean onChange) {
+  word row = 1;  
+
+  // Jetzt die Daten...
+  // wir brauchen keine 16, 10 wuerden reichen... dann gehen aber nicht 
+  // mehr alle Modi! Also via Variable, die im Modus-Wechsel geaendert wird...
+  for (byte k = 0; k < _linesToWrite; k++) { 
+#ifdef SKIP_BLANK_LINES
+    if(matrix[DISPLAY_SHIFT k] != 0) {
+#endif
+      // Zeile einschalten...
+      _shiftRegister->prepareShiftregisterWrite();
+      _shiftRegister->shiftOut(~matrix[DISPLAY_SHIFT k]);
+      _shiftRegister->shiftOut(row);
+      _shiftRegister->finishShiftregisterWrite();    
+
+      // hier kann man versuchen, das Taktverhaeltnis zu aendern (Anzeit)...
+      // delayMicroseconds mit Werten <= 3 macht Probleme...
+      if(_brightness != 0) {
+        delayMicroseconds(_brightness*PWM_DURATION);
+      }
+
+      // Zeile ausschalten (einfach ganze Matrix gegenlaeufig schalten)...
+      _shiftRegister->prepareShiftregisterWrite();
+      _shiftRegister->shiftOut(65535);
+      _shiftRegister->shiftOut(0);
+      _shiftRegister->finishShiftregisterWrite();      
+  
+      // hier kann man versuchen, das Taktverhaeltnis zu aendern (Auszeit)...
+      // delayMicroseconds mit Werten <= 3 macht Probleme...
+      if(_brightness != _maxBrightness) {
+        delayMicroseconds((_maxBrightness-_brightness)*PWM_DURATION);
+      }
+
+#ifdef SKIP_BLANK_LINES
+    }
+#endif
+    
+    row = row << 1;
+  }
+}
+
+/**
+ * Die Helligkeit des Displays anpassen.
+ * 
+ * @param brightness Die Helligkeit.
+ * @param maxBrightness Der max. Helligkeitswert.
+ */
+void LedDriver74HC595::setBrightness(byte brightness, byte maxBrightness) {
+  _brightness = brightness;
+  _maxBrightness = maxBrightness;
+}
+
+/**
+ * Anpassung der Groesse des Bildspeichers.
+ * 
+ * @param linesToWrite Wieviel Zeilen aus dem Bildspeicher sollen 
+ *                     geschrieben werden?
+ */
+void LedDriver74HC595::setLinesToWrite(byte linesToWrite) {
+    _linesToWrite = linesToWrite;
+}
+
+/**
+ * Das Display ausschalten.
+ */
+void LedDriver74HC595::shutDown() {
+  digitalWrite(_outputEnablePin, HIGH);
+}
+
+/**
+ * Das Display einschalten.
+ */
+void LedDriver74HC595::wakeUp() {
+  digitalWrite(_outputEnablePin, LOW);
+}
+
+/**
+ * Den Dateninhalt des LED-Treibers loeschen.
+ */
+void LedDriver74HC595::clearData() {
+  word row = 1;  
+
+  for (byte k = 0; k < 16; k++) { 
+    _shiftRegister->prepareShiftregisterWrite();
+    _shiftRegister->shiftOut(65535);
+    _shiftRegister->shiftOut(row);
+    _shiftRegister->finishShiftregisterWrite();        
+    row = row << 1;
+  }
+}
+

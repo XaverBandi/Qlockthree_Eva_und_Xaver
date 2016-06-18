@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/51/trunk/Qlockthree
+END
+Alarm.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/59/trunk/Qlockthree/Alarm.h
+END
+Qlockthree.ino
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/72/trunk/Qlockthree/Qlockthree.ino
+END
+Settings.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/68/trunk/Qlockthree/Settings.h
+END
+LedDriverPowerShiftRegister.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/68/trunk/Qlockthree/LedDriverPowerShiftRegister.h
+END
+Woerter_CH.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/62/trunk/Qlockthree/Woerter_CH.h
+END
+TimeStamp.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/46/trunk/Qlockthree/TimeStamp.h
+END
+LedControl.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/46/trunk/Qlockthree/LedControl.h
+END
+LedDriverUeberPixel.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/68/trunk/Qlockthree/LedDriverUeberPixel.h
+END
+Button.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/57/trunk/Qlockthree/Button.cpp
+END
+Renderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/69/trunk/Qlockthree/Renderer.h
+END
+Configuration.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/69/trunk/Qlockthree/Configuration.h
+END
+Woerter_EN.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/46/trunk/Qlockthree/Woerter_EN.h
+END
+DCF77Helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/46/trunk/Qlockthree/DCF77Helper.h
+END
+MyDCF77.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/69/trunk/Qlockthree/MyDCF77.cpp
+END
+LedDriver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/68/trunk/Qlockthree/LedDriver.cpp
+END
+Staben.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/51/trunk/Qlockthree/Staben.h
+END
+LDR.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/68/trunk/Qlockthree/LDR.cpp
+END
+ShiftRegister.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/67/trunk/Qlockthree/ShiftRegister.cpp
+END
+Woerter_ES.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/63/trunk/Qlockthree/Woerter_ES.h
+END
+DS1307.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/70/trunk/Qlockthree/DS1307.h
+END
+Zahlen.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/51/trunk/Qlockthree/Zahlen.h
+END
+Woerter_IT.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/69/trunk/Qlockthree/Woerter_IT.h
+END
+LedDriverDefault.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/68/trunk/Qlockthree/LedDriverDefault.h
+END
+Alarm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/55/trunk/Qlockthree/Alarm.cpp
+END
+LedDriverPowerShiftRegister.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/68/trunk/Qlockthree/LedDriverPowerShiftRegister.cpp
+END
+Settings.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/68/trunk/Qlockthree/Settings.cpp
+END
+Woerter_DE_MKF.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/46/trunk/Qlockthree/Woerter_DE_MKF.h
+END
+TimeStamp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/46/trunk/Qlockthree/TimeStamp.cpp
+END
+Woerter_DE.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/46/trunk/Qlockthree/Woerter_DE.h
+END
+LedControl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/46/trunk/Qlockthree/LedControl.cpp
+END
+LedDriverUeberPixel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/68/trunk/Qlockthree/LedDriverUeberPixel.cpp
+END
+Renderer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/69/trunk/Qlockthree/Renderer.cpp
+END
+DCF77Helper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/51/trunk/Qlockthree/DCF77Helper.cpp
+END
+Button.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/57/trunk/Qlockthree/Button.h
+END
+DS1307.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/70/trunk/Qlockthree/DS1307.cpp
+END
+Woerter_FR.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/46/trunk/Qlockthree/Woerter_FR.h
+END
+MyDCF77.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/68/trunk/Qlockthree/MyDCF77.h
+END
+LedDriver.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/68/trunk/Qlockthree/LedDriver.h
+END
+Woerter_NL.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/72/trunk/Qlockthree/Woerter_NL.h
+END
+LedDriverDefault.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/68/trunk/Qlockthree/LedDriverDefault.cpp
+END
+LDR.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/68/trunk/Qlockthree/LDR.h
+END
+ShiftRegister.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/67/trunk/Qlockthree/ShiftRegister.h
+END
+Debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/46/trunk/Qlockthree/Debug.h
+END
